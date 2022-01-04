@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Calendar from './Calendar'
 
-function App() {
+const events = [
+  { d: 4, m: 12, y: 2021, event: 'Event 1' },
+  { d:16, m: 12, y: 2021, event: 'Event 1' }
+]
+const calendarStyles = {
+  box: {
+  }
+}
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Calendar 
+        styles={calendarStyles}
+        handleDay={(i)=> {console.log('luaoeu',i)}}
+        events={events}
+      />
     </div>
   );
 }
 
-export default App;
+export default App
